@@ -1,0 +1,23 @@
+Counter verification regression summary
+====================================
+
+Date: 2026-04-23
+Repository: Aditya-Kumar-000/TESTING
+
+Artifacts generated during verification:
+- baseline_sim.log (existing vector testbench run)
+- counter_director.log (focused director-level counter run)
+- counter_director.vcd (waveform from focused run)
+
+Commands executed:
+1) iverilog -g2012 -o simv_existing d2lib.v TEAMG_DESIGN_PATCHED.v test_TEAMG_DESIGN.v
+   vvp -n simv_existing > baseline_sim.log 2>&1
+   Result: PASS ("SIMULATION OK")
+
+2) iverilog -g2012 -o simv_counter d2lib.v TEAMG_DESIGN_PATCHED.v test_TEAMG_COUNTER_DIRECTOR.v
+   vvp -n simv_counter > counter_director.log 2>&1
+   Result: PASS ("DIRECTOR_COUNTER_REGRESSION: PASS")
+
+Key bug fixed:
+- ACKIN+UPIN and ACKIN+DOWNIN response polarity in TEAMG_8UPDOWN was reversed.
+  After fix: ACKIN+UPIN => +1, ACKIN+DOWNIN => -1.
