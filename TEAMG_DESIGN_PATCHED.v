@@ -621,8 +621,8 @@ NOR2 NOR2_1(
 	.Q(N_2)
 );
 NOR2 NOR2_2(
-	.A(DOWNIN),
-	.B(N_16),
+	.A(UPIN),
+	.B(N_8),
 	.Q(N_6)
 );
 NOR2 NOR2_3(
@@ -1427,4 +1427,3 @@ TEAMG_SEQ TEAMG_SEQ_1(
 	.nResetSeq(A4)
 );
 endmodule // TEAMG_DESIGNFINAL
-
