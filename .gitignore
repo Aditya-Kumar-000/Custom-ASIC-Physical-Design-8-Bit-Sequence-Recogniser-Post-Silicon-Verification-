@@ -1,0 +1,4 @@
+simv*
+*.vcd
+baseline_sim.log
+counter_director.log
